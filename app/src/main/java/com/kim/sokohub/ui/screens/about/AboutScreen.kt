@@ -3,11 +3,15 @@ package com.kim.sokohub.ui.screens.about
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import java.security.AccessController
 
 @Composable
-fun AboutScreen(){
+fun AboutScreen(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -19,5 +23,5 @@ fun AboutScreen(){
 @Preview(showBackground = true)
 @Composable
 fun AboutScreenPreview(){
-    AboutScreen()
+    AboutScreen(rememberNavController())
 }
