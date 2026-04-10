@@ -11,6 +11,7 @@ import com.kim.sokohub.ui.screens.about.AboutScreen
 import com.kim.sokohub.ui.screens.auth.LoginScreen
 import com.kim.sokohub.ui.screens.auth.RegisterScreen
 import com.kim.sokohub.ui.screens.home.HomeScreen
+import com.kim.sokohub.ui.screens.intent.IntentScreen
 import com.kim.sokohub.ui.screens.onboarding.OnBoardingScreen
 import com.kim.sokohub.ui.screens.payment.PaymentScreen
 import com.kim.sokohub.ui.screens.service.ServiceScreen
@@ -48,6 +49,10 @@ fun AppNavHost(
         composable(ROUT_SERVICE) {
             ServiceScreen(navController)
         }
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
+        }
+
 
     }
 }
