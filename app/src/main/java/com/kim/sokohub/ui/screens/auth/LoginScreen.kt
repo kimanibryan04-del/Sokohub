@@ -19,6 +19,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,6 +41,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.kim.sokohub.R
+import com.kim.sokohub.navigation.ROUT_HOME
+import com.kim.sokohub.navigation.ROUT_LOGIN
+import com.kim.sokohub.navigation.ROUT_REGISTER
 import com.kim.sokohub.ui.theme.newme
 
 @Composable
@@ -122,10 +126,21 @@ fun LoginScreen(navController: NavController){
         }
 
         Spacer(modifier = Modifier.height(10.dp))
-        Text(
-            text = "Don't have an Account? Register",
-            fontWeight = FontWeight.Medium,
-        )
+        TextButton(onClick = {navController.navigate(ROUT_REGISTER)}) {
+            Text(
+                text = "Don't have an Account? Register",
+                fontWeight = FontWeight.Medium,
+            )
+        }
+
+
+        TextButton(onClick = {navController.navigate(ROUT_HOME)}) {
+            Text(
+                text = "Go to home",
+                fontWeight = FontWeight.Medium,
+            )
+        }
+
 
 
 

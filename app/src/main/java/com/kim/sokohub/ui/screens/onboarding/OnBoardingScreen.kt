@@ -27,6 +27,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.kim.sokohub.R
 import com.kim.sokohub.navigation.ROUT_HOME
+import com.kim.sokohub.navigation.ROUT_REGISTER
 import com.kim.sokohub.ui.theme.newme
 
 @Composable
@@ -76,7 +77,7 @@ fun OnBoardingScreen(navController: NavController){
         )
 
         Button(
-            onClick = {navController.navigate(ROUT_HOME)},
+            onClick = {navController.navigate(ROUT_REGISTER)},
             colors = ButtonDefaults.buttonColors(newme),
             shape = RoundedCornerShape(size = 10.dp),
             modifier = Modifier.width(150.dp)
