@@ -46,13 +46,15 @@ import java.security.AccessController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AboutScreen(navController: NavController) {
+    var selectedIndex by remember { mutableStateOf(0) }
+
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text("Business Cards") },
                 navigationIcon = {
                     IconButton(onClick = { /* Handle nav */ }) {
-                        Icon(Icons.Default.Menu, contentDescription = "Menu", tint = Color.Gray)
+                        Icon(Icons.Default.Menu, contentDescription = "Menu", tint = newyou)
                     }
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
@@ -60,6 +62,47 @@ fun AboutScreen(navController: NavController) {
                     titleContentColor = newyou,
                 )
             )
+        },
+        //BottomBar
+        bottomBar = {
+            NavigationBar(
+                containerColor = newyou
+            ){
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Home, contentDescription = "Home",) },
+                    label = { Text("Home") },
+                    selected = selectedIndex == 0,
+                    onClick = { selectedIndex = 0
+                        //navController.navigate(ROUT_HOME)
+                    }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Favorites") },
+                    label = { Text("Favorites") },
+                    selected = selectedIndex == 1,
+                    onClick = { selectedIndex = 1
+                        // navController.navigate(ROUT_HOME)
+                    }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
+                    label = { Text("Profile") },
+                    selected = selectedIndex == 2,
+                    onClick = { selectedIndex = 2
+                        //  navController.navigate(ROUT_HOME)
+                    }
+                )
+
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Share, contentDescription = "Profile") },
+                    label = { Text("Share") },
+                    selected = selectedIndex == 3,
+                    onClick = { selectedIndex = 3
+                        //  navController.navigate(ROUT_HOME)
+                    }
+                )
+
+            }
         },
         content = { paddingValues ->
             // Use LazyColumn so you can scroll if you add more cards
