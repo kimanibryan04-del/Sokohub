@@ -11,7 +11,11 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -55,6 +59,15 @@ fun ScaffoldScreen(navController: NavController){
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
                 },
+                actions = {
+                    IconButton(onClick = { /* Handle back/nav */ }) {
+                        Icon(Icons.Default.Notifications, contentDescription = "")
+                    }
+
+                    IconButton(onClick = { /* Handle back/nav */ }) {
+                        Icon(Icons.Default.Menu, contentDescription = "Back")
+                    }
+                } ,
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = newme,
                     titleContentColor = Color.White,
@@ -69,7 +82,7 @@ fun ScaffoldScreen(navController: NavController){
                 containerColor = newme
             ){
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                    icon = { Icon(Icons.Default.Home, contentDescription = "Home",) },
                     label = { Text("Home") },
                     selected = selectedIndex == 0,
                     onClick = { selectedIndex = 0
@@ -94,10 +107,10 @@ fun ScaffoldScreen(navController: NavController){
                 )
 
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Profile") },
-                    label = { Text("Profile") },
-                    selected = selectedIndex == 2,
-                    onClick = { selectedIndex = 2
+                    icon = { Icon(Icons.Default.Share, contentDescription = "Profile") },
+                    label = { Text("Share") },
+                    selected = selectedIndex == 3,
+                    onClick = { selectedIndex = 3
                         //  navController.navigate(ROUT_HOME)
                     }
                 )
