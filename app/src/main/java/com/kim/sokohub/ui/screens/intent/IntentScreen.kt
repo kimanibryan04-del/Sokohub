@@ -21,17 +21,21 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.kim.sokohub.navigation.ROUT_ABOUT
+import com.kim.sokohub.navigation.ROUT_HOME
 import com.kim.sokohub.ui.theme.newme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -195,6 +199,13 @@ fun IntentScreen(navController: NavController){
             )
 
         }
+        TextButton(onClick = {navController.navigate(ROUT_ABOUT)}) {
+            Text(
+                text = "About Us",
+                fontWeight = FontWeight.Medium,
+            )
+        }
+
 
 
 
