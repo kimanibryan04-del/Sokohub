@@ -31,6 +31,7 @@ import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -41,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.kim.sokohub.R
+import com.kim.sokohub.data.AuthViewModel
 import com.kim.sokohub.navigation.ROUT_HOME
 import com.kim.sokohub.navigation.ROUT_LOGIN
 import com.kim.sokohub.navigation.ROUT_REGISTER
@@ -112,8 +114,16 @@ fun LoginScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        val context = LocalContext.current
+        val authViewModel = AuthViewModel(navController, context)
+
         Button(
-            onClick = {},
+            onClick = {
+
+                authViewModel.login(email, password)
+
+
+            },
             colors = ButtonDefaults.buttonColors(newme),
             shape = RoundedCornerShape(size = 10.dp),
             modifier = Modifier.width(85.dp)
